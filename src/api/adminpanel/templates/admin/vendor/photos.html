@@ -1,0 +1,20 @@
+<style type="text/css">
+    .carousel{
+        height: 250px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+    .carousel img{
+        max-height: 250px;
+    }
+</style>
+<div class="carousel">
+{% for photo in business.photos.all %}
+<img src="{{ photo.image.url }}" />
+{% endfor %}
+</div>
+<a href="{% url 'admin:vendor_image_changelist' %}?business={{ business.pk }}"
+   class="btn btn-info">
+    Change Images
+</a>

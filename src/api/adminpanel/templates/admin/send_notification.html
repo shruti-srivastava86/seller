@@ -1,0 +1,17 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<form method="post" class="form-horizontal notification-form" enctype="multipart/form-data">{% csrf_token %}
+<div class="well">
+    <h1>Send Notification</h1>
+    {{ form | crispy }}
+    <br/><br/>
+    <button type="submit" class="btn btn-primary">
+        Send Notification
+    </button>
+</div>
+</form>
+{% include "admin/notification_scripts.html" %}
+
+{{ form.media }}
+{% endblock %}

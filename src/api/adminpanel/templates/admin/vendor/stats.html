@@ -1,0 +1,80 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'adminpanel/css/stats.css' %}" />
+{% if original.pk %}
+<div class="well stat-box">
+    <h2 class="text-center">{{ original.business.name }}</h2>
+    <div class="stat-grid">
+        <div class="stat">
+            <div class="number">{{ original.purchases.count }}</div>
+            <div class="title">
+                # of Transactions
+                <br/>
+                <a class="btn btn-info"
+                   href="{% url 'admin:purchase_purchase_changelist' %}?vendor__exact={{ original.pk }}">
+                    View Transactions
+                </a>
+            </div>
+        </div>
+        <div class="stat">
+            <div class="number">{{ original.reviews.count }}</div>
+            <div class="title">
+                # of Reviews
+                <br/>
+                <a class="btn btn-info"
+                   href="{% url 'admin:review_rating_changelist' %}?purchase__vendor={{ original.pk }}">
+                    View Ratings
+                </a>
+            </div>
+        </div>
+        <div class="stat">
+            <div class="number">{{ original.coins }}</div>
+            <div class="title">
+                Reward Coins
+                <br/>
+                <a class="btn btn-info"
+                   href="{% url 'admin:user_transaction_changelist' %}?user={{ original.pk }}">
+                    Wallet History
+                </a>
+                <a class="btn btn-info"
+                   href="{% url 'admin:amend_loyalty_points' original.pk %}">
+                    Amend
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="well stat-box" style="padding-bottom: 14px;">
+    <a class="btn btn-info btn-lg pull-right confirm-action" data-action="approved" data-href="{% url 'admin:action-vendor' original.pk %}">
+        Approve
+    </a>
+    <a class="btn btn-danger btn-lg pull-right confirm-action" style="margin-right: 10px;" data-action="reject" data-href="{% url 'admin:action-vendor' original.pk %}">
+        Reject
+    </a>
+    <a class="btn btn-danger btn-sm pull-right confirm-action" style="margin-right: 10px;" data-action="suspend" data-href="{% url 'admin:action-vendor' original.pk %}">
+        Suspend
+    </a>
+    <span style="font-size: 18px; padding-top: 4px; display: inline-block;">
+        Vendor status is currently {{ original.get_status_display }}
+    </span>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+<script>
+    (function($){
+        let canSubmit = false;
+        $(".confirm-action").click(function(){
+            let b = this;
+            swal("Warning", "Are you sure you want to " + $(this).text().trim() + " this vendor?", "warning", {
+                buttons: ["Cancel", "Yes"],
+            }).then(function(cont){
+                if(cont){
+                    let f = $("<form>").attr("action", $(b).attr("data-href")).attr("method", "post").appendTo("body");
+                    $("<input>").attr("name", "action").attr("value", $(b).attr("data-action")).appendTo(f);
+                    $("input[name=csrfmiddlewaretoken]").appendTo(f);
+                    f.submit();
+                }
+            });
+        });
+    })(jQuery);
+</script>
+
+{% endif %}

@@ -1,0 +1,82 @@
+{#{% load sitetree %}#}
+{% load i18n suit_menu %}
+{% load url from suit_compat %}
+
+<div class="left-nav" id="left-nav">
+    <ul>
+        <li class="{% if tab == 'dashboard' %}active{% endif %}">
+            <a href="{% url 'admin:dashboard' %}">
+                <i class="icon-home"></i>Dashboard
+            </a>
+        </li>
+        <li class="{% if tab == 'chat' %}active{% endif %}">
+            <a href="{% url 'admin:chat' %}">
+                <i class="icon-comment"></i>Chat
+            </a>
+        </li>
+        <li class="{% if opts.model_name == 'vendor' %}active{% endif %}">
+            <a href="{% url 'admin:vendor_vendor_changelist' %}">
+                <i class="icon-briefcase"></i>Vendors
+            </a>
+        </li>
+        <li class="{% if opts.model_name == 'eater' %}active{% endif %}">
+            <a href="{% url 'admin:eater_eater_changelist' %}">
+                <i class="icon-user"></i>Eaters
+            </a>
+        </li>
+        <li class="{% if opts.model_name == 'transactionlogview' %}active{% endif %}">
+            <a href="{% url 'admin:user_transactionlogview_changelist' %}">
+                <i class="icon-star"></i>Points Log
+            </a>
+        </li>
+        <li class="{% if opts.model_name == 'purchase' %}active{% endif %}">
+            <a href="{% url 'admin:purchase_purchase_changelist' %}">
+                <i class="icon-shopping-cart"></i>Purchase Log
+            </a>
+        </li>
+        <li class="{% if opts.model_name == 'rating' %}active{% endif %}">
+            <a href="{% url 'admin:review_rating_changelist' %}">
+                <i class="icon-thumbs-up"></i>Reviews Log
+            </a>
+        </li>
+        <li class="{% if opts.model_name == 'reportvendor' %}active{% endif %}">
+            <a href="{% url 'admin:user_reportvendor_changelist' %}">
+                <i class="icon-warning-sign"></i>Reported Vendors
+            </a>
+        </li>
+        <li class="separator"></li>
+        {% block menu_home %}
+        {% url 'admin:index' as index_url %}
+        <li
+        {% if index_url == request.path %} class="active"{% endif %}>
+        <a href="{{ index_url }}"><i class="icon-home"></i>{% trans 'Home' %}
+        </a>
+        </li>
+        {% endblock %}
+
+        {% get_menu request as app_list %}
+        {% if app_list %}
+        {% for app in app_list %}
+        {% if app.separator %}
+        <li class="separator"></li>
+        {% else %}
+        <li
+        {{ app.is_active|yesno:' class=active,' }}>
+        <a href="{{ app.url }}" {{ app.blank|yesno:' target=_blank,' }}><i
+            class="{% firstof app.icon 'icon-chevron-right' %}"></i>{% trans app.label|capfirst %}
+        </a>
+        {% if app.models %}
+        <ul>
+            {% for model in app.models %}
+            <li
+            {{ model.is_active|yesno:' class=active,' }}>
+            <a href="{{ model.url }}" {{ model.blank|yesno:' target=_blank,' }}>{{ model.label }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </ul>
+</div>

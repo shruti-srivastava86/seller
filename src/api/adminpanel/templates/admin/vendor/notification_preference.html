@@ -1,0 +1,35 @@
+{% load static %}
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <th>Checkin/Checkout notifications</th>
+            <td>
+                {% if business.notification_preference.checkin_checkout %}
+                    <img src="{% static 'admin/img/icon-yes.svg' %}" alt="True">
+                {% else %}
+                    <img src="{% static 'admin/img/icon-no.svg' %}" alt="False">
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Marketing Notifications</th>
+            <td>
+                {% if business.notification_preference.marketing %}
+                    <img src="{% static 'admin/img/icon-yes.svg' %}" alt="True">
+                {% else %}
+                    <img src="{% static 'admin/img/icon-no.svg' %}" alt="False">
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Support Notifications</th>
+            <td>
+                {% if business.notification_preference.support %}
+                    <img src="{% static 'admin/img/icon-yes.svg' %}" alt="True">
+                {% else %}
+                    <img src="{% static 'admin/img/icon-no.svg' %}" alt="False">
+                {% endif %}
+            </td>
+        </tr>
+    </tbody>
+</table>

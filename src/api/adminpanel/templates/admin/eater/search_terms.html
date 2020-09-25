@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'adminpanel/css/stats.css' %}"/>
+
+
+
+{% if original.pk %}
+<div class="well stat-box">
+    <h2 class="text-center">Search Terms</h2>
+    {% for x in original.search.all %}
+        <h5>{{ x.created_at }} -- {{ x.word }}</h5>
+    {% endfor %}
+</div>
+{% endif %}

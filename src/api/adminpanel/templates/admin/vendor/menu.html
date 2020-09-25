@@ -1,0 +1,44 @@
+<style type="text/css">
+    .dish{
+        padding: 10px;
+        max-width: 400px;
+        margin: 10px 0;
+    }
+    .dish h3{
+        padding: 0px;
+    }
+    .dish.special {
+        background: #333;
+        color: #FFF
+    }
+    .dish.special h3{
+        text-shadow: 0px 0px !important;
+    }
+</style>
+<h2>Menu</h2>
+<div class="well">
+    <a class="btn btn-info" href="{% url 'admin:dish_dish_changelist' %}?business={{ original.business.pk }}">
+        Edit Menu
+    </a>
+    {% for dish in original.business.dishes_with_related.all %}
+    <div class="dish {% if dish.special %}special{% endif %}">
+        <h3>
+            <span class="pull-right">
+                {% if dish.temporary_price %}
+                    &pound;{{ dish.temporary_price }}
+                    <s>
+                {% endif %}
+                &pound;{{ dish.price }}
+                {% if dish.temporary_price %}
+                    </s>
+                {% endif %}
+            </span>
+            {{ dish.name }}
+        </h3>
+        <p>{{ dish.description }}</p>
+        {% for dietary in dish.dietary_information.all %}
+            <span class="label label-success">{{ dietary.name }}</span>
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div>

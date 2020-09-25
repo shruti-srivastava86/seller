@@ -1,0 +1,4086 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Seller API Collection",
+		"_postman_id": "b372e4cb-675f-2606-2f42-d463b6145519",
+		"description": "# Introduction\nMobile and Web API's for Seller app\n\n# Overview\nInclude every request from the system\n\n# Authentication\nApart from Login ang Singup, ther api's use Token based authentication\n\n# Error Codes\n200 - Success response\n201 - Created\n204 - No content\n400 - Bad request\n404 - Object not found\n500 - Internal server error\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Eater Mobile",
+			"description": "Contains the mobile endpoints for the Eater user.",
+			"item": [
+				{
+					"name": "Authentication",
+					"description": "",
+					"item": [
+						{
+							"name": "facebook Sign Up",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/sign_up/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"DEF\",\n  \"email\": \"def+eater3@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for signing a \"eater\" user up to the Seller system.\n\nRequired fields are:\n\n- name\n- email\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Sign Up",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/sign_up/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"DEF\",\n  \"email\": \"def+eater3@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for signing a \"eater\" user up to the Seller system.\n\nRequired fields are:\n\n- name\n- email\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Log In",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/login/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"ranjit.kumar+vendor9999@xyz.com\",\n  \"password\": \"password\"\n}"
+								},
+								"description": "Endpoint for logging in an \"eater\" user into to the Seller system.\n\nRequired fields are:\n\n- email\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "facebook login",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/facebook/login/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \"facebook_token\":\"EAACEdEose0cBAID4TZBU5qrg5ZAxaboKRq5c1uuPv1dlOH4BMxy08TLkMg91TZBvbwd9dVL92y4aG7WByX4JXQ2pGyMXoEAZAZAhmHISxRkbwEAeSSJZCEvhBUsKxHzT4539LJ19y8DJR4IbUmBXKuYyaaOdiwlWgswzvVetpJ2uv3n2sKhoJXWQgZCuTMzzOYZD\",\n  \"facebook_id\":\"1541221084\",\n  \"email\": \"def+eater3@xyz.com\",\n  \"name\":\"def facebook\"\n}"
+								},
+								"description": "Endpoint for logging in an \"eater\" user into to the Seller system.\n\nRequired fields are:\n\n- email\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Eater Details",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"last name\": \"abc\",\n  \"email\": \"abc+eater4@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/change_password/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"old_password\": \"Password123\",\n  \"password\": \"Password1234\"\n}"
+								},
+								"description": "Endpoint for changing a password for an \"eater\" user in the Seller system.\n\nRequired fields are:\n- old_password\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Forgot Password",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/forgot_password/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+eater3@xyz.com\"\n}"
+								},
+								"description": "Endpoint for forgot a password for an \"eater\" user in the Seller system.\n\nRequired fields are:\n- email"
+							},
+							"response": []
+						},
+						{
+							"name": "Log Out",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/logout/",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint for logging out an \"eater\" user from the Seller system."
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Account",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint for deleting an \"eater\" user from the Seller system."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Profile",
+					"description": "",
+					"item": [
+						{
+							"name": "Profile",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/profile/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for eater profile details"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Profile",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/profile/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n    \"dietary_preference\": [],\n    \"home_market\":2\n}"
+								},
+								"description": "Endpoint for updating eater profile details"
+							},
+							"response": []
+						},
+						{
+							"name": "General Settings",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/profile/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for eater general settings"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Vendors",
+					"description": "",
+					"item": [
+						{
+							"name": "Near by Vendors",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/mobile/eater/vendor/?point={{LNG}},{{LAT}}&ordering=distance&rating=1,4&cuisines=1,3",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"eater",
+										"vendor",
+										""
+									],
+									"query": [
+										{
+											"key": "point",
+											"value": "{{LNG}},{{LAT}}",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "ordering",
+											"value": "distance",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "rating",
+											"value": "1,4",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "cuisines",
+											"value": "1,3",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"last name\": \"ABC\",\n  \"email\": \"abc+eater4@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for retrieving near by vendors\nRequired query params:\n- point - lng, lat (ex: point=78.48,17.32)\n- ordering (distance, highestrating, lowestrating, highesttotalratings, lowestlessratings)\n- filter \n--\tfavourite (true/false)\n--\tcuisines (1,2)\n--\tdietary (2,3)\n--\tcashless (true/false)\n--\toffer (true/false)\n--\trating (3,5)"
+							},
+							"response": []
+						},
+						{
+							"name": "Vendor Details",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/vendor/10/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"last name\": \"ABC\",\n  \"email\": \"abc+eater4@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint retrievning a vendor details"
+							},
+							"response": []
+						},
+						{
+							"name": "Vendor Dishes",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/vendor/4/dishes/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"last name\": \"ABC\",\n  \"email\": \"abc+eater4@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for retrieving all vendor dishes"
+							},
+							"response": []
+						},
+						{
+							"name": "Favourite Vendors",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/mobile/eater/vendor/?favourite=false",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"eater",
+										"vendor",
+										""
+									],
+									"query": [
+										{
+											"key": "favourite",
+											"value": "false"
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"last name\": \"ABC\",\n  \"email\": \"abc+eater4@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching all favourite vendors for a respective eater\n\nRequired query paramrs:\n- favourite=true"
+							},
+							"response": []
+						},
+						{
+							"name": "favourite vendor",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/vendor/20/favourite/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint for favourite a vendor."
+							},
+							"response": []
+						},
+						{
+							"name": "unfavourite vendor",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/vendor/20/unfavourite/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint for unfavourite a vendor."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Dish",
+					"description": "",
+					"item": [
+						{
+							"name": "List All Dishes",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/dish/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving list of active dishes for an eater.\n\nDefault ordering: special"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Dietary",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/dish/dietary/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving all dietary information\n\ndefault ordering: name"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Cuisines",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/dish/cuisines/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving all Cuisines\n\ndefault ordering: name"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Allergens",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/dish/allergens/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving all Allergens\n\ndefault ordering: name"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Purchase",
+					"description": "",
+					"item": [
+						{
+							"name": "Create Purchase while redeeming points",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/purchase/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"vendor_uuid\":\"c3dbd84b-725f-493d-ab1c-485a966ca53f\",\n  \"transaction\":19,\n  \"details\":[{\"quantity\": 1, \"name\": \"dish jgjgj\", \"id\": 1, \"price\": \"3\"}],\n  \"waiting_time\":10\n}"
+								},
+								"description": "Endpoint for retrieving list of purchases for a eater.\n\nDefault ordering: created_at"
+							},
+							"response": []
+						},
+						{
+							"name": "Create Purchase for user",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/purchase/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"vendor_uuid\":\"10297c7c-772f-44d7-9a67-803fa9895ad6\",\n  \"details\":[{\"quantity\": 24, \"name\": \"dish jgjgj\", \"id\": 8, \"price\": \"3\"}],\n  \"waiting_time\":1,\n  \"dish_not_listed\":true,\n  \"lat\":\"\",\n  \"lng\":\"\"\n \n}"
+								},
+								"description": "Endpoint for retrieving list of purchases for a eater.\n\nDefault ordering: created_at"
+							},
+							"response": []
+						},
+						{
+							"name": "Scan for vendor",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/scan/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"vendor_uuid\":\"f289eb0b-c6d6-4bb4-b0d6-e82bf88983e2\"\n}"
+								},
+								"description": "Endpoint for retrieving list of purchases for a eater.\n\nDefault ordering: created_at"
+							},
+							"response": []
+						},
+						{
+							"name": "List All Purchases",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/purchase/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"vendor\":5,\n  \"transaction\":1,\n  \"details\":[{\"quantity\": 1, \"name\": \"dish jgjgj\", \"id\": 1, \"price\": \"3\"}],\n  \"waiting_time\":10\n}"
+								},
+								"description": "Endpoint for retrieving list of purchases for a eater.\n\nDefault ordering: created_at"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Review",
+					"description": "",
+					"item": [
+						{
+							"name": "get reviews",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/review/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"purchase\":97,\n  \"overall_rating\":1,\n  \"text\": \"this is one of the best restaurants\"\n}"
+								},
+								"description": "Endpoint for posting a review for a particular purchase by an eater\n\nRequired fields:\n- purchase* (purchase ID - int)\n- price* (range 1 to 5 - int)\n- quality* (range 1 to 5 - int)\n- accuracy* (range 1 to 5 - int)\n- recommended* (range 1 to 5 - int) \n- text"
+							},
+							"response": []
+						},
+						{
+							"name": "Post a Review",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/review/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"overall_rating\":1,\n  \"text\": \"this is one of the best restaurants\"\n}"
+								},
+								"description": "Endpoint for posting a review for a particular purchase by an eater\n\nRequired fields:\n- purchase* (purchase ID - int)\n- price* (range 1 to 5 - int)\n- quality* (range 1 to 5 - int)\n- accuracy* (range 1 to 5 - int)\n- recommended* (range 1 to 5 - int) \n- text"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Transactions",
+					"description": "",
+					"item": [
+						{
+							"name": "Create a Transactions",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/transaction/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"coins\": 50\n}"
+								},
+								"description": "Endpoint for create an eater transactions\n\nrequired fields:\n- coins"
+							},
+							"response": []
+						},
+						{
+							"name": "Transactions",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/transaction/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching eater transactions"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Notifications",
+					"description": "",
+					"item": [
+						{
+							"name": "Notification Preference",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/notification_preference/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching eaters notification preferences"
+							},
+							"response": []
+						},
+						{
+							"name": "get all notifications",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/mobile/eater/notifications/?notification_type=4&read =false",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"eater",
+										"notifications",
+										""
+									],
+									"query": [
+										{
+											"key": "notification_type",
+											"value": "4",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "read ",
+											"value": "false",
+											"equals": true,
+											"description": ""
+										},
+										{
+											"key": "read",
+											"value": "false"
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching eaters notification preferences"
+							},
+							"response": []
+						},
+						{
+							"name": "unread count",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/mobile/eater/notifications/unread/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"eater",
+										"notifications",
+										"unread",
+										""
+									],
+									"query": [
+										{
+											"key": "notification_type",
+											"value": "4",
+											"equals": true,
+											"description": "",
+											"disabled": true
+										},
+										{
+											"key": "read ",
+											"value": "false",
+											"equals": true,
+											"description": "",
+											"disabled": true
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching eaters notification preferences"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Notification Preference",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/notification_preference/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n    \"marketing\": true,\n    \"review\":true\n}"
+								},
+								"description": "Endpoint to edit vendors notification preferences"
+							},
+							"response": []
+						},
+						{
+							"name": "Register Device",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/device_register/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"token\": \"285039EFB5C143FF415F1C5555CC8329FA1DEDFEAE9568EA5360C35571A6F379\",\n  \"uuid\": \"123456789\",\n  \"type\": \"apns\"\n}"
+								},
+								"description": "Endpoint for a vendor for registering a device for push notification.\n\nRequired fields are:\n\n- token\n- uuid\n- type (apns/gcm)"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Report",
+					"description": "",
+					"item": [
+						{
+							"name": "Report Vendor",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/profile/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for reportinging vendor"
+							},
+							"response": []
+						},
+						{
+							"name": "Report Vendor",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/report_vendor/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"vendor\": 11,\n  \"report\": 1,\n  \"message\":\"text\"\n}"
+								},
+								"description": "Endpoint for reportinging vendor"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Support",
+					"description": "",
+					"item": [
+						{
+							"name": "Support Eater",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/eater/support_eater/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"message\":\"text\"\n}"
+								},
+								"description": "Endpoint for support"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Markets",
+					"description": "",
+					"item": [
+						{
+							"name": "List all Marktes for eater",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/markets/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving all Markets\n\ndefault ordering: name"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Vendor Mobile",
+			"description": "Contains the mobile endpoints for the Vendor user.",
+			"item": [
+				{
+					"name": "Authentication",
+					"description": "",
+					"item": [
+						{
+							"name": "Sign Up",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/sign_up/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"abc\",\n  \"email\": \"abc+vendor1@xyz.com\",\n  \"password\": \"Password123\",\n  \"business_name\": \"business 8\"\n}"
+								},
+								"description": "Endpoint for signing a \"vendor\" user up to the Seller system.\n\nRequired fields are:\n\n- name\n- email\n- password\n- lat (float field)\n- lng (float field)"
+							},
+							"response": []
+						},
+						{
+							"name": "Log In",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/login/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"ranjit.kumar+vendor9999@xyz.com\",\n  \"password\": \"password\"\n}"
+								},
+								"description": "Endpoint for logging in a \"vendor\" user into to the Seller system.\n\nRequired fields are:\n\n- email\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/change_password/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"old_password\": \"Password123\",\n  \"password\": \"Password1234\"\n}"
+								},
+								"description": "Endpoint for changing a password for a \"vendor\" user in the Seller system.\nRequired fields are:\n- old_password\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Forgot Password",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/forgot_password/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+eater3@xyz.com\"\n}"
+								},
+								"description": "Endpoint for changing a password for an \"eater\" user in the Seller system.\n\nRequired fields are:\n- old_password\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Log out",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/logout/",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint for logging out a \"vendor\" user from the Seller system."
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/delete/",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token d7f721b55ae2847b5e3f90a747fbdd067d218252"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint for deleting a \"vendor\" user from the Seller system."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Profile",
+					"description": "",
+					"item": [
+						{
+							"name": "Profile",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/profile/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching ratings for a vendors profile"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Profile",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/profile/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"business\": {\n    \"offer_active\": false,\n    \"offer\": \"20% discount on all items\",\n    \"tagline\": \"this is the best you can find\"\n  }\n}"
+								},
+								"description": "Endpoint for fetching ratings for a vendors profile"
+							},
+							"response": []
+						},
+						{
+							"name": "Check-In",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/checkin/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"lng\": 78.48,\n  \"lat\": 17.38,\n  \"checkout_time\": \"17:30\"\n}"
+								},
+								"description": "Endpoint for a vendor to checkin"
+							},
+							"response": []
+						},
+						{
+							"name": "Check-Out",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/checkout/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint for a vendor to checkout"
+							},
+							"response": []
+						},
+						{
+							"name": "Check-Out Time",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/checkout/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint for a vendor to retrieve checkout time for the current day"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Review",
+					"description": "",
+					"item": [
+						{
+							"name": "Ratings",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/rating/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for retrieving a vendors ratings"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Dish",
+					"description": "",
+					"item": [
+						{
+							"name": "List Active Dishes",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/mobile/vendor/dish/?active=true",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"vendor",
+										"dish",
+										""
+									],
+									"query": [
+										{
+											"key": "active",
+											"value": "true"
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving list of active dishes belonging to a vendor."
+							},
+							"response": []
+						},
+						{
+							"name": "Dish Details",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/dish/1/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving details of a particular dishe belonging to a vendor."
+							},
+							"response": []
+						},
+						{
+							"name": "Edit a Dish",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/dish/7/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n \"active\":0\n  \n}"
+								},
+								"description": "Endpoint for retrieving details of a particular dishe belonging to a vendor."
+							},
+							"response": []
+						},
+						{
+							"name": "List In-Active Dishes",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/mobile/vendor/dish/?active=false",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"vendor",
+										"dish",
+										""
+									],
+									"query": [
+										{
+											"key": "active",
+											"value": "false"
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving list of in active dishes belonging to a vendor."
+							},
+							"response": []
+						},
+						{
+							"name": "Add Dish",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/dish/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1],\n  \"active\": 1,\n  \"special\": 1\n}"
+								},
+								"description": "Endpoint for adding a Dish by a \"vendor\" user to the Seller system.\n\nRequired fields are:\n\n- name\n- price\n- description\n- dietary_preferences\n- active\n- -special"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Chat",
+					"description": "",
+					"item": [
+						{
+							"name": "Conversations",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/chat/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"title\":\"test\",\n \"chat_type\":1,\n \"message\":\"hello3\"\n \n\n}"
+								},
+								"description": "Endpoint for fetching all conversation for vendor"
+							},
+							"response": []
+						},
+						{
+							"name": "unread count",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/chat/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"title\":\"test\",\n \"chat_type\":1,\n \"message\":\"hello3\"\n \n\n}"
+								},
+								"description": "Endpoint for fetching all conversation for vendor"
+							},
+							"response": []
+						},
+						{
+							"name": "Conversations",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/chat/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "test",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "chat_type",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "final",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "",
+											"description": "",
+											"type": "file"
+										}
+									]
+								},
+								"description": "Endpoint for creating a conversation for vendor"
+							},
+							"response": []
+						},
+						{
+							"name": "Message",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/mobile/vendor/chat/26/messages/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"mobile",
+										"vendor",
+										"chat",
+										"26",
+										"messages",
+										""
+									],
+									"query": [
+										{
+											"key": "message_ordering",
+											"value": "1",
+											"equals": true,
+											"description": "",
+											"disabled": true
+										},
+										{
+											"key": "message_id",
+											"value": "46",
+											"equals": true,
+											"description": "",
+											"disabled": true
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n \"message\":\"last\",\n \"image\":\"1356f818-4686-4b5a-9011-f705c310f854.jpg\"\n \n\n}"
+								},
+								"description": "Endpoint for for fetching all messages in conversation"
+							},
+							"response": []
+						},
+						{
+							"name": "Message",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/chat/29/messages/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {},
+								"description": "Endpoint for adding message to converstaion\n\nRequired fields are:\n\n\n- message\n-"
+							},
+							"response": []
+						},
+						{
+							"name": "Message",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/chat/9/messages/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"read_by\":[5]\n \n\n}"
+								},
+								"description": "Endpoint for adding updating messages in conversation"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Notifications",
+					"description": "",
+					"item": [
+						{
+							"name": "Register Device",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/device_register/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"token\": \"285039EFB5C143FF415F1C5555CC8329FA1DEDFEAE9568EA5360C35571A6F379\",\n  \"uuid\": \"123456789\",\n  \"type\": \"apns\"\n}"
+								},
+								"description": "Endpoint for a vendor for registering a device for push notification.\n\nRequired fields are:\n\n- token\n- uuid\n- type (apns/gcm)"
+							},
+							"response": []
+						},
+						{
+							"name": "in app notifications",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/device_register/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"token\": \"285039EFB5C143FF415F1C5555CC8329FA1DEDFEAE9568EA5360C35571A6F379\",\n  \"uuid\": \"123456789\",\n  \"type\": \"apns\"\n}"
+								},
+								"description": "Endpoint for a vendor for registering a device for push notification.\n\nRequired fields are:\n\n- token\n- uuid\n- type (apns/gcm)"
+							},
+							"response": []
+						},
+						{
+							"name": "Notification Preference",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/notification_preference/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching vendors notification preferences"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Notification Preference",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/notification_preference/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"checkin_checkout\": true,\n    \"marketing\": true,\n    \"support\": true\n}"
+								},
+								"description": "Endpoint to edit vendors notification preferences"
+							},
+							"response": []
+						},
+						{
+							"name": "Test Push Notification",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/test_notification/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{EATER}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint to send test push notification to vendor's devices"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Transactions",
+					"description": "",
+					"item": [
+						{
+							"name": "Create a Transactions",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/transaction/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"qr_id\": \"220eb0df-ab61-4660-9eff-4aa059ecc12b\",\n  \"note\": \"redeemed at stall\"\n}"
+								},
+								"description": "Endpoint for creating a transaction for vendor\n\nrequired fields:\n- qr_id\n\noptional fields:\n- note"
+							},
+							"response": []
+						},
+						{
+							"name": "Transactions",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/transaction/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching ratings for a vendors profile"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Markets",
+					"description": "",
+					"item": [
+						{
+							"name": "List all Marktes for vendor",
+							"request": {
+								"url": "{{URL}}/api/v1/mobile/vendor/markets/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving all Markets\n\ndefault ordering: name"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Vendor Web",
+			"description": "Contains the web endpoints for the Vendor user.",
+			"item": [
+				{
+					"name": "Authentication",
+					"description": "",
+					"item": [
+						{
+							"name": "Sign Up",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/sign_up/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"DEF8\",\n  \"email\": \"def+vendor8@xyz.com\",\n  \"password\": \"Password123\",\n  \"business_name\":\"Vendor8\"\n}"
+								},
+								"description": "Endpoint for signing a \"vendor\" user up to the Seller system.\n\nRequired fields are:\n\n- first_name\n- last_name\n- email\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Log In",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/login/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"def+vendor1011@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for logging in a \"vendor\" user into to the Seller system.\n\nRequired fields are:\n\n- email\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Change Password",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/change_password/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"old_password\": \"pass\",\n  \"password\": \"pass1\"\n}"
+								},
+								"description": "Endpoint for changing a password for a \"vendor\" user in the Seller system."
+							},
+							"response": []
+						},
+						{
+							"name": "Log out",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/logout/",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"stephen.jefferson+eater@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for logging out a \"vendor\" user from the Seller system."
+							},
+							"response": []
+						},
+						{
+							"name": "Sign Up copy",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/sign_up/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"DEF8\",\n  \"email\": \"def+vendor8@xyz.com\",\n  \"password\": \"Password123\",\n  \"business_name\":\"Vendor8\"\n}"
+								},
+								"description": "Endpoint for signing a \"vendor\" user up to the Seller system.\n\nRequired fields are:\n\n- first_name\n- last_name\n- email\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Sign Up copy",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/sign_up/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"DEF8\",\n  \"email\": \"def+vendor8@xyz.com\",\n  \"password\": \"Password123\",\n  \"business_name\":\"Vendor8\"\n}"
+								},
+								"description": "Endpoint for signing a \"vendor\" user up to the Seller system.\n\nRequired fields are:\n\n- first_name\n- last_name\n- email\n- password"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/delete/",
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token d7f721b55ae2847b5e3f90a747fbdd067d218252",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": "Endpoint for deleting a \"vendor\" user from the Seller system."
+							},
+							"response": []
+						},
+						{
+							"name": "Forgot Password",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/forgot_password/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+eater3@xyz.com\"\n}"
+								},
+								"description": "Endpoint for changing a password for an \"eater\" user in the Seller system.\n\nRequired fields are:\n- old_password\n- password"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Onboarding",
+					"description": "",
+					"item": [
+						{
+							"name": "Stage 1",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/onboarding/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"name\": \"katy\",\n   \"description\": \"ajkvbkfbhisdvhidhvs\",\n   \"biography\": \"jvbkjdvbiljlojLCJNOIDJ OIHVLNVDL LNB\",\n   \"tagline\": \"DISHLVD st\",\n\t\"cuisine\":[2],\n \"social_links\": [\"test\",\"test2\"],\n \"onboarding_stage\":1\n}"
+								},
+								"description": "Onboarding stage 1 vendor profile update"
+							},
+							"response": []
+						},
+						{
+							"name": "Stage 2",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/onboarding/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \n  \n     \"cash\":true,\n     \"card\":true,\n      \"opening_hours\": [\n        {\n            \"id\": 8,\n            \"weekday\": 1,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 9,\n            \"weekday\": 2,\n            \"from_hour\": \"00:00:00\",\n            \"to_hour\": \"00:00:00\",\n            \"open\": false\n        },\n        {\n            \"id\": 10,\n            \"weekday\": 3,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 11,\n            \"weekday\": 4,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 12,\n            \"weekday\": 5,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 13,\n            \"weekday\": 6,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 14,\n            \"weekday\": 0,\n            \"from_hour\": \"01:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        }\n    ],\n     \"onboarding_stage\":2\n     \n     \n}"
+								},
+								"description": "Onboarding stage 2 vendor profile update of photos"
+							},
+							"response": []
+						},
+						{
+							"name": "Stage 3",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/onboarding/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \n\t\"home_market\": [1],\n\t \"onboarding_stage\":3,\n     \n    \n   \n}"
+								},
+								"description": "Onboarding stage 3 vendor profile, addition and removal of ingredients"
+							},
+							"response": []
+						},
+						{
+							"name": "Stage 4",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/onboarding/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"photos\": [\n            {\n               \n                \"image\": \"https://sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/https%3A/sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/vendor/business/1356f818-4686-4b5a-9011-f705c310f854.jpg\",\n                \"hero\": true\n            },\n            {\n                \n                \"image\": \"https://sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/https%3A/sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/vendor/business/1356f818-4686-4b5a-9011-f705c310f854.jpg\",\n                \"hero\": false\n            },\n            {\n                \"image\":\"https://sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/https%3A/sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/vendor/business/1356f818-4686-4b5a-9011-f705c310f854.jpg\",\n                \"hero\":false\n            }\n        ],\n         \"onboarding_stage\":4\n        \n}"
+								},
+								"description": "Onboarding stage 4 vendor profile, addition and removal of cuisines,allergens and home market"
+							},
+							"response": []
+						},
+						{
+							"name": "Stage 5",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/onboarding/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ingredients\":[\"uvw1\"],\n   \"onboarding_stage\":5\n}"
+								},
+								"description": "Onboarding stage 4 vendor profile, addition and removal of cuisines,allergens and home market"
+							},
+							"response": []
+						},
+						{
+							"name": "Stage 6",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/onboarding/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"allergens\":[],\n     \"onboarding_stage\":6\n}"
+								},
+								"description": "Onboarding stage 4 vendor profile, addition and removal of cuisines,allergens and home market"
+							},
+							"response": []
+						},
+						{
+							"name": "Stage 7",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/onboarding/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \n\t \"onboarding_stage\": 1,\n    \"allergens\":[1],\n    \"cuisine\":[1],\n    \"home_market\": [1]\n     \n    \n   \n}"
+								},
+								"description": "Onboarding stage 4 vendor profile, addition and removal of cuisines,allergens and home market"
+							},
+							"response": []
+						},
+						{
+							"name": "Onboarding Profile",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/onboarding/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{ \n    \"opening_hours\": [\n        {\n            \n            \"weekday\": 1,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\"\n        },\n        {\n            \n            \"weekday\": 2,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\"\n        },\n        {\n            \n            \"weekday\": 3,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\"\n        },\n        {\n            \n            \"weekday\": 4,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\"\n        },\n        {\n           \n            \"weekday\": 5,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\"\n        },\n        {\n            \n            \"weekday\": 6,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\"\n        },\n        {\n            \n            \"weekday\": 0,\n            \"from_hour\": \"1:30:00\",\n            \"to_hour\": \"06:30:00\"\n        }\n    ],\n    \n    \"name\": \"uvw\",\n    \"description\":\"tests\",\n    \"biography\": \"hello welcome\",\n    \"tagline\": \"first st\",\n    \"cashless\": true,\n    \"social_links\": [{\"facebook\":\"facebook\"},{\"twitter\":\"twitter\"},{\"instagram\":\"instagram\"}],\n    \n   \n    \"ingredients\":[\"uvwhog111\",\"uvw111\",\"uvw111\",\"uvw1\"]\n   \n   \n    \n   \n}"
+								},
+								"description": "For retreiving the vendor profile during onboarding"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Profile",
+					"description": "",
+					"item": [
+						{
+							"name": "Edit offer details",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/profile/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \n    \n    \"offer\": \"400% discount on all items\"\n    \n  \n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Profile",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/update_profile/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\":\"test\",\n  \"email\":\"def+vendor88@xyz.com\"\n  \n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Business info",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/update_business/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\n\t\"name\": \"katy\",\n   \"description\": \"ajkvbkfbhisdvhidhvs\",\n   \"biography\": \"jvbkjdvbiljlojLCJNOIDJ OIHVLNVDL LNB\",\n   \"tagline\": \"DISHLVD st\",\n\t\"cuisine\":[2],\n\t\"social_links\": {\"facebook\":\"facebbok\",\"twitter\":\"twittwer\",\"insta\":\"insta\"}\n\t\n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit trading info",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/update_trading/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \n  \n     \"cash\":true,\n     \"card\":true,\n      \"opening_hours\": [\n        {\n            \"id\": 8,\n            \"weekday\": 1,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 9,\n            \"weekday\": 2,\n            \"from_hour\": \"00:00:00\",\n            \"to_hour\": \"00:00:00\",\n            \"open\": false\n        },\n        {\n            \"id\": 10,\n            \"weekday\": 3,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 11,\n            \"weekday\": 4,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 12,\n            \"weekday\": 5,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 13,\n            \"weekday\": 6,\n            \"from_hour\": \"05:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        },\n        {\n            \"id\": 14,\n            \"weekday\": 0,\n            \"from_hour\": \"01:30:00\",\n            \"to_hour\": \"06:30:00\",\n            \"open\": true\n        }\n    ]\n     \n     \n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit allergens",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/update_allergens/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"allergens\":[]\n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit ingredients",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/update_ingredients/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ingredients\":[\"uvw111\"]\n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit photos",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/update_photos/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"photos\": [\n            {\n               \n                \"image\": \"https://sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/https%3A/sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/vendor/business/1356f818-4686-4b5a-9011-f705c310f854.jpg\",\n                \"hero\": true\n            },\n            {\n                \n                \"image\": \"https://sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/https%3A/sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/vendor/business/1356f818-4686-4b5a-9011-f705c310f854.jpg\",\n                \"hero\": false\n            },\n            {\n                \"image\":\"https://sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/https%3A/sellerdevstack-s3stack-1hn9q9u51565w-s3bucket-izp76lw0fqj0.s3.amazonaws.com/vendor/business/1356f818-4686-4b5a-9011-f705c310f854.jpg\",\n                \"hero\":false\n            }\n        ]\n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						},
+						{
+							"name": "Profile",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/profile/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching vendors profile"
+							},
+							"response": []
+						},
+						{
+							"name": "Transactions",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/profile/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"business\": {\n    \n    \"offer\": \"30% discount on all items\"\n    \n  }\n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit location",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/update_location/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"home_market\": [1]\n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit address",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/update_address/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"address_line_1\":\"tescsa bst\",\n  \"address_line_2\":\"tedskndlknst2\",\n  \"city\":\"hydeffjdb\",\n  \"county\":\"countcpdkcsry\",\n  \"postcode\":\"ne1samclsa2la\"\n  \n}"
+								},
+								"description": "Endpoint for editing vednor profile, as of it includes only editing of special offer"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Dish",
+					"description": "",
+					"item": [
+						{
+							"name": "Add Dish",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/dish/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1],\n  \"special\": 1\n}"
+								},
+								"description": "Endpoint for adding dish to vendor profile"
+							},
+							"response": []
+						},
+						{
+							"name": "View ingredients",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/ingredients/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1],\n  \"special\": 1\n}"
+								},
+								"description": "Endpoint for adding dish to vendor profile"
+							},
+							"response": []
+						},
+						{
+							"name": "List Active Dishes",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/web/vendor/dish/?active=true",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"web",
+										"vendor",
+										"dish",
+										""
+									],
+									"query": [
+										{
+											"key": "active",
+											"value": "true"
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving list of active dishes belonging to a vendor."
+							},
+							"response": []
+						},
+						{
+							"name": "Dish Details",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/dish/1/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving details of a particular dishe belonging to a vendor."
+							},
+							"response": []
+						},
+						{
+							"name": "Edit Dish",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/dish/11/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish edit\",\n  \"price\": 10,\n  \"description\": \"edit description\",\n  \"special\": 0,\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for editing dish"
+							},
+							"response": []
+						},
+						{
+							"name": "Set Dish Active",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/dish/1/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"active\": 1\n  \n}"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Set Temporary Price",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/dish/1/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \n  \"temporary_price\": 11\n \n}\n"
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Dish",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/dish/8/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						},
+						{
+							"name": "List all Cuisines",
+							"request": {
+								"url": "{{URL}}/api/v1/web/dish/cuisine/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving all Cuisines\n\ndefault ordering: name"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Dietary",
+							"request": {
+								"url": "{{URL}}/api/v1/web/dish/cuisine/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving all Cuisines\n\ndefault ordering: name"
+							},
+							"response": []
+						},
+						{
+							"name": "List all Allergens",
+							"request": {
+								"url": "{{URL}}/api/v1/web/dish/allergens/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving all Allergens\n\ndefault ordering: name"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Markets",
+					"description": "",
+					"item": [
+						{
+							"name": "List all Marktes for vendor",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/markets/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"dish 1\",\n  \"price\": 12.3,\n  \"description\": \"this is the first dish ever\",\n  \"dietary_information\": [1]\n}"
+								},
+								"description": "Endpoint for retrieving all Markets\n\ndefault ordering: name"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Transactions",
+					"description": "",
+					"item": [
+						{
+							"name": "Transactions",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/transaction/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching ratings for a vendors profile"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Reviews",
+					"description": "",
+					"item": [
+						{
+							"name": "Ratings",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/rating/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for retrieving a vendors ratings"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Chat",
+					"description": "",
+					"item": [
+						{
+							"name": "Conversations",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/chat/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"title\":\"test\",\n \"chat_type\":1,\n \"message\":\"hello3\"\n \n\n}"
+								},
+								"description": "Endpoint for fetching all conversation for vendor"
+							},
+							"response": []
+						},
+						{
+							"name": "Conversations",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/chat/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "test",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "chat_type",
+											"value": "1",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "message",
+											"value": "final",
+											"description": "",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"value": "",
+											"description": "",
+											"type": "file"
+										}
+									]
+								},
+								"description": "Endpoint for creating a conversation for vendor"
+							},
+							"response": []
+						},
+						{
+							"name": "Message",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/web/vendor/chat/26/messages/",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"web",
+										"vendor",
+										"chat",
+										"26",
+										"messages",
+										""
+									],
+									"query": [
+										{
+											"key": "message_ordering",
+											"value": "1",
+											"equals": true,
+											"description": "",
+											"disabled": true
+										},
+										{
+											"key": "message_id",
+											"value": "46",
+											"equals": true,
+											"description": "",
+											"disabled": true
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n \"message\":\"last\",\n \"image\":\"1356f818-4686-4b5a-9011-f705c310f854.jpg\"\n \n\n}"
+								},
+								"description": "Endpoint for for fetching all messages in conversation"
+							},
+							"response": []
+						},
+						{
+							"name": "Message",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/chat/23/messages/",
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"message\":\"test\",\n\t\"image\":\"url\"\n}"
+								},
+								"description": "Endpoint for adding message to converstaion\n\nRequired fields are:\n\n\n- message\n-"
+							},
+							"response": []
+						},
+						{
+							"name": "Message",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/chat/9/messages/",
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\n\"read_by\":[5]\n \n\n}"
+								},
+								"description": "Endpoint for adding updating messages in conversation"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "search",
+					"description": "",
+					"item": [
+						{
+							"name": "Profile copy",
+							"request": {
+								"url": {
+									"raw": "{{URL}}/api/v1/web/vendor/search/?search=test",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"api",
+										"v1",
+										"web",
+										"vendor",
+										"search",
+										""
+									],
+									"query": [
+										{
+											"key": "search",
+											"value": "test",
+											"equals": true,
+											"description": ""
+										}
+									],
+									"variable": []
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching vendors profile"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Dashboard",
+					"description": "",
+					"item": [
+						{
+							"name": "Dashboard",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/dashboard/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching vendor dashboard"
+							},
+							"response": []
+						},
+						{
+							"name": "latest_transactions",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/dashboard/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching vendor dashboard"
+							},
+							"response": []
+						},
+						{
+							"name": "Customer Type",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/dashboard/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching vendor dashboard"
+							},
+							"response": []
+						},
+						{
+							"name": "Most purchased dishes",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/most_purchased_dishes/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching vendor dashboard"
+							},
+							"response": []
+						},
+						{
+							"name": "High rated dishes",
+							"request": {
+								"url": "{{URL}}/api/v1/web/vendor/highest_rated_dishes/",
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"description": ""
+									},
+									{
+										"key": "Authorization",
+										"value": "Token {{VENDOR}}",
+										"description": ""
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"abc+vendor@xyz.com\",\n  \"password\": \"Password123\"\n}"
+								},
+								"description": "Endpoint for fetching vendor dashboard"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,2 @@
+[run]
+omit = ../*migrations*,*/locustio/*,*/test*,*/factories.py,api/wsgi.py,api/_settings_local.py,api/settings_test_ci.py,*/apps.py

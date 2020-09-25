@@ -1,0 +1,20 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+<script>
+    (function($){
+        let canSubmit = false;
+        $(".notification-form").on("submit", function(e){
+            if(!canSubmit){
+                e.preventDefault();
+                swal("Warning", "Are you sure you want to send this notification?", "warning", {
+                    buttons: ["Cancel", "Send"],
+                    dangerMode: true,
+                }).then(function(cont){
+                    if(cont){
+                        canSubmit = true;
+                        $(".notification-form").submit();
+                    }
+                });
+            }
+        });
+    })(jQuery);
+</script>

@@ -1,0 +1,27 @@
+{% load i18n %}
+{% block subject %}{% trans "Welcome to seller!" %}{% endblock %}
+{% block text_body %}
+{% trans "Welcome to seller!" %}
+
+{% blocktrans with vendor_name=vendor.name business_name=vendor.bussiness.name %}Hey {{ vendor_name }} you've made a great decision registering {{ business_name }} on seller!{% endblocktrans %}
+
+{{ text | safe }}
+
+{{ link }}
+
+{% include "templated_email/footer_text.html" %}
+{% endblock %}
+{% block html_body %}
+    {% with visual_header="Please complete your business profile to get started on Hawkker" %}
+        {% include "templated_email/header.html" %}
+    {% endwith %}
+    {% include "templated_email/text_header.html" %}
+    <h1>{% trans "Welcome to seller!" %}</h1>
+    <p>{% blocktrans with vendor_name=vendor.name business_name=vendor.bussiness.name %}Hey {{ vendor_name }} you've made a great decision registering {{ business_name }} on seller!{% endblocktrans %}</p>
+    <p>{{ text | linebreaks }}</p>
+    {% include "templated_email/text_footer.html" %}
+    {% with text=_("Get Started") link=link %}
+        {% include "templated_email/button.html" %}
+    {% endwith %}
+    {% include "templated_email/footer.html" %}
+{% endblock %}

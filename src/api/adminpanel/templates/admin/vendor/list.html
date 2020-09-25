@@ -1,0 +1,30 @@
+{% extends "admin/change_list.html" %}
+{% block date_hierarchy %}
+    <style>
+    .set-points form{
+        margin: 0;
+    }
+    </style>
+    <div class="well set-points">
+        <form class="set-points-form form-inline">
+            Set Loyalty Points of selected vendors to
+            <input type="number" class="form-control set-points-value" name="points" />
+            <button type="submit" class="btn btn-submit">Set</button>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert"></script>
+    <script>
+        (function($){
+            $(".set-points-form").on("submit", function(e){
+                e.preventDefault();
+                $(".actions select").val("set_loyalty_points");
+                $(".set-points-value").appendTo(".actions");
+                $(".actions button").click();
+                swal("Setting Vendor Points", "This may take a moment. Please stand by...", {
+                    closeModal: false,
+                    buttons: false
+                });
+            })
+        })(jQuery);
+    </script>
+{% endblock %}

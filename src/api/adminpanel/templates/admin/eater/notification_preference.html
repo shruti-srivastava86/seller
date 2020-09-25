@@ -1,0 +1,25 @@
+{% load static %}
+<table class="table table-striped">
+    <tbody>
+        <tr>
+            <th>Review notifications</th>
+            <td>
+                {% if eater.notification_preference.review %}
+                    <img src="{% static 'admin/img/icon-yes.svg' %}" alt="True">
+                {% else %}
+                    <img src="{% static 'admin/img/icon-no.svg' %}" alt="False">
+                {% endif %}
+            </td>
+        </tr>
+        <tr>
+            <th>Marketing Notifications</th>
+            <td>
+                {% if eater.notification_preference.marketing %}
+                    <img src="{% static 'admin/img/icon-yes.svg' %}" alt="True">
+                {% else %}
+                    <img src="{% static 'admin/img/icon-no.svg' %}" alt="False">
+                {% endif %}
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+.stat .title{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 10px;
+    min-height: 40px;
+}
+.stat .number {
+    font-size: 52px;
+    text-align: center;
+    padding: 15px;
+}
+.stat-box h2 {
+    border-bottom: 1px solid #CCC;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.stat-grid {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+.stat-grid .stat {
+    flex-grow: 1;
+}
+.stat + .stat {
+    border-left: 1px solid #CCC;
+}
+.stat{
+    padding: 5px;
+}
+.stat-container{
+    max-width: 800px;
+}
+.stat .btn{
+    padding: 2px;
+    font-size: 10px;
+    line-height: 1.2em;
+}
+.stat .btn:before{
+    display: block;
+    content: '';
+}

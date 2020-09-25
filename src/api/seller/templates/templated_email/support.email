@@ -1,0 +1,25 @@
+{% load i18n %}
+{% block subject %}{% trans "Your Support Message" %}{% endblock %}
+{% block text_body %}
+{% trans "Hawkker Support" %}
+
+{% if subject %}{{ subject }}
+
+{% endif %}{{ text | safe }}
+
+{{ comment }}
+
+{% include "templated_email/footer_text.html" %}
+{% endblock %}
+{% block html_body %}
+    {% include "templated_email/header.html" %}
+    {% include "templated_email/text_header.html" %}
+    <h1>{% trans "Hawkker Support" %}</h1>
+    <p>{{ text | linebreaks }}</p>
+
+    {% if subject %}<h2>{{ subject }}</h2>{% endif %}
+    <p>{{ comment }}</p>
+
+    {% include "templated_email/text_footer.html" %}
+    {% include "templated_email/footer.html" %}
+{% endblock %}

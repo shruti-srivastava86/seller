@@ -1,0 +1,9 @@
+[flake8]
+max-line-length = 130
+max-complexity = 12
+exclude =
+    */migrations/*
+    # No need to traverse our git directory
+    .git,
+    # There's no value in checking cache directories
+    __pycache__,

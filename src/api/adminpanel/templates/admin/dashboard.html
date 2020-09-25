@@ -1,0 +1,87 @@
+{% extends "admin/base_site.html" %}
+{% block extrahead %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'adminpanel/css/stats.css' %}" />
+{% endblock %}
+{% block content %}
+<div class="container-fluid stat-container">
+    <div class="row">
+        <div class="span2">
+            <div class="well stat-box">
+                <h2 class="text-center">Chat</h2>
+                <div class="stat">
+                    <div class="number">{{ unread_chat }}</div>
+                    <div class="title">Unread Messages</div>
+                </div>
+            </div>
+        </div>
+        <div class="span10">
+            <div class="well stat-box">
+                <h2 class="text-center">Vendors</h2>
+                <div class="stat-grid">
+                    <div class="stat">
+                        <div class="number">{{ checked_in }}</div>
+                        <div class="title">Checked In</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">{{ should_checked_in }}</div>
+                        <div class="title">Should Be Checked In</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">{{ closed_today }}</div>
+                        <div class="title">Closed Today</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">{{ pending_approval }}</div>
+                        <div class="title">Pending Approval</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">{{ unread_complaints }}</div>
+                        <div class="title">Unread Complaints</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span4">
+            <div class="well stat-box">
+                <h2 class="text-center">Eater Browsing Today</h2>
+                <div class="stat-grid">
+                    <div class="stat">
+                        <div class="number">{{ registered_browsing }}</div>
+                        <div class="title">Registered</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">{{ guest_browsing }}</div>
+                        <div class="title">Guest</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="span8">
+            <div class="well stat-box">
+                <h2 class="text-center">Vendors</h2>
+                <div class="stat-grid">
+                    <div class="stat">
+                        <div class="number">{{ purchases_today }}</div>
+                        <div class="title"># Purchases Today</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">{{ last_week_unreviewed }}</div>
+                        <div class="title">Last Week Unreviewed</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">{{ trans_last_week }}</div>
+                        <div class="title">Trans Last Week</div>
+                    </div>
+                    <div class="stat">
+                        <div class="number">{{ today_loyalty_redemption }}</div>
+                        <div class="title">Today Loyalty Redemption</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

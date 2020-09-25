@@ -1,0 +1,9 @@
+{% extends 'admin/change_list.html' %}
+{% block pagination %}
+<script>
+    (function($){
+        /* Redirect user to the first General Settings entry */
+        document.location.href = $(".row1 a").attr('href');
+    })(jQuery);
+</script>
+{% endblock %}

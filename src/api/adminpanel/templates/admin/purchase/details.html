@@ -1,0 +1,49 @@
+{% if not purchase.details %}
+<p>The purchase details were not recorded</p>
+{% endif %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Dish ID</th>
+            <th>Dish</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dish in purchase.details %}
+        <tr>
+            <td>
+                <a href="{% url "admin:dish_dish_change" dish.id %}">
+                    {{ dish.id }}
+                </a>
+            </td>
+            <td>
+                {{ dish.name }}
+                <br/>
+                {% if dish.special %}
+                <span class="label label-primary">Special</span>
+                {% endif %}
+                {% if dish.is_discounted %}
+                <span class="label label-info">Discounted</span>
+                {% endif %}
+            </td>
+            <td>
+                {{ dish.current_price | floatformat:2 }}
+            </td>
+            <td>
+                {{ dish.quantity }}
+            </td>
+            <td>
+                {{ dish.total_price_paid | floatformat:2 }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class="alert alert-info">
+    Information here is frozen at the time of purchase. Specials
+    and prices are subject to change, as well as items being
+    pulled form the menu.
+</div>

@@ -1,0 +1,26 @@
+{% extends "admin/base.html" %}
+
+
+{# Additional CSS includes #}
+{% block extrastyle %}
+  {{ block.super }}
+  <style>
+    body.suit_layout_horizontal #suit-nav {
+     background-color: #6d3353
+    }
+  </style>
+{% endblock %}
+
+
+{# Additional JS files in footer, right before </body> #}
+{#{% block extrajs %}#}
+{#  <script type="text/javascript" src="{% static 'js/my_project.js' %}"></script>#}
+{#{% endblock %}#}
+
+
+
+
+{% block footer_branding %}
+ Hawkker
+{% endblock %}
+{% block footer_links %}{% endblock %}

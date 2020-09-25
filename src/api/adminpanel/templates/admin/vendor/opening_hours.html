@@ -1,0 +1,31 @@
+{% if business.opening_hours %}
+<table class="table">
+    <thead>
+        <tr>
+            <th>Day</th>
+            <th>Hours</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for hours in business.opening_hours.all %}
+        <tr>
+            <td>{{ hours.get_weekday_display }}</td>
+            <td>
+                {% if hours.open %}
+                    {{ hours.from_hour }} - {{ hours.to_hour }}
+                {% else %}
+                    Not Open
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% else %}
+<p>No opening hours have been added for this business</p>
+{% endif %}
+<a class="btn btn-info"
+   target="_blank"
+   href="{% url 'admin:vendor_openinghours_changelist' %}?business__exact={{ business.pk }}">
+    Edit Opening Hours
+</a>

@@ -1,0 +1,31 @@
+{% load i18n %}
+{% block subject %}{% trans "Complete your seller profile" %}{% endblock %}
+{% block text_body %}
+{% trans "Complete your seller profile" %}
+{% blocktrans with vendor_name=vendor.name business_name=vendor.business.name %}
+Hey {{ vendor_name }} it looks like your seller profile for {{ business_name }} is hasn't been completed.
+{% endblocktrans %}
+{{ text | safe }}
+
+{{ link }}
+
+{% include "templated_email/footer_text.html" %}
+{% endblock %}
+{% block html_body %}
+    {% with visual_header="You haven't completed your Hawkker profile yet" %}
+        {% include "templated_email/header.html" %}
+    {% endwith %}
+    {% include "templated_email/text_header.html" %}
+    <h1>{% trans "Complete your seller profile" %}</h1>
+    <p>
+        {% blocktrans with vendor_name=vendor.name business_name=vendor.business.name %}
+            Hey {{ vendor_name }} it looks like your seller profile for {{ business_name }} is hasn't been completed.
+        {% endblocktrans %}
+    </p>
+    <p>{{ text | linebreaks }}</p>
+    {% include "templated_email/text_footer.html" %}
+    {% with text=_("Get Started") link=link %}
+        {% include "templated_email/button.html" %}
+    {% endwith %}
+    {% include "templated_email/footer.html" %}
+{% endblock %}

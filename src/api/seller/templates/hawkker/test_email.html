@@ -1,0 +1,36 @@
+{% extends "admin/base_site.html" %}
+{% load static i18n %}
+{% block bodyclass %}{{ block.super }} {{ opts.app_label }}-{{ opts.model_name }} change-form{% endblock %}
+{% block extrastyle %}
+{{ block.super }}
+<style>
+#iframe{
+    resize: both;
+    width: 600px;
+    height: 400px;
+}
+</style>
+{% endblock %}
+{% block content %}
+<form method="get">
+    <select name="email">
+        {% for page in templates %}
+        <option>{{ page }}</option>
+        {% endfor %}
+    </select>
+    <button type="submit">Go</button>
+</form>
+<p>Subject: {{subject}}</p>
+<iframe id="iframe"></iframe>
+<script type="text/html" id="contents">
+{{html_body | safe }}
+</script>
+<pre>
+{{text_body}}
+</pre>
+<textarea cols="100" rows="20">{{html_body | escape}}</textarea>
+<script type="text/javascript">
+document.getElementById("iframe").srcdoc = document.getElementById("contents").innerHTML;
+</script>
+{% endblock %}
+

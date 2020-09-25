@@ -1,0 +1,26 @@
+{% load i18n %}
+{% block subject %}{% trans "seller account not approved!" %}{% endblock %}
+{% block text_body %}
+{% trans "seller account not approved!" %}
+{% blocktrans with vendor_name=vendor.name business_name=vendor.business.name %}
+Hey {{ vendor_name }} we have not been able to approve your account for {{ business_name }},
+{% endblocktrans %}
+{{ text | safe }}
+
+{% include "templated_email/footer_text.html" %}
+{% endblock %}
+{% block html_body %}
+    {% with visual_header="Your Hawkker account was rejected" %}
+        {% include "templated_email/header.html" %}
+    {% endwith %}
+    {% include "templated_email/text_header.html" %}
+    <h1>{% trans "seller account not approved!" %}</h1>
+    <p>
+        {% blocktrans with vendor_name=vendor.name business_name=vendor.business.name %}
+            Hey {{ vendor_name }} we have not been able to approve your account for {{ business_name }},
+        {% endblocktrans %}
+    </p>
+    <p>{{ text | linebreaks }}</p>
+    {% include "templated_email/text_footer.html" %}
+    {% include "templated_email/footer.html" %}
+{% endblock %}

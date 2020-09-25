@@ -1,0 +1,87 @@
+{% load i18n %}
+{% block subject %}{% trans "Report seller vendor" %}{% endblock %}
+{% block text_body %}
+{% trans "Report seller vendor" %}
+{% if text %}
+{{ text | safe }}{% endif %}
+
+Report Reason: {{ reason }}
+Report Comments: {{ comment }}
+Vendor: {{ vendor.name }}
+Vendor Location: {{ vendor.location.x }} {{ vendor.location.y }}
+Reported By: {{ eater.name }} - {{ eater.email }}
+Time: {{ time }}
+Date: {{ date }}
+
+{% include "templated_email/footer_text.html" %}
+{% endblock %}
+{% block html_body %}
+    {% include "templated_email/header.html" %}
+    {% include "templated_email/text_header.html" %}
+    <h1>{% trans "Your Vendor Report" %}</h1>
+    {% if text %}<p>{{ text | linebreaks }}</p>{% endif %}
+
+    <table>
+        <tr>
+            <td style="padding: 10px; background: #EEE; border-bottom: 1px solid #CCC">
+                Report Reason
+            </td>
+            <td style="padding: 10px;border-bottom: 1px solid #CCC">
+                {{ reason }}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; background: #EEE; border-bottom: 1px solid #CCC">
+                Report Comments
+            </td>
+            <td style="padding: 10px;border-bottom: 1px solid #CCC">
+                {{ comment }}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; background: #EEE; border-bottom: 1px solid #CCC">
+                Vendor
+            </td>
+            <td style="padding: 10px;border-bottom: 1px solid #CCC">
+                {{ vendor.name }}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; background: #EEE;border-bottom: 1px solid #CCC">
+                Vendor Location
+            </td>
+            <td style="padding: 10px;border-bottom: 1px solid #CCC">
+                {{ vendor.location.x }}<br/>{{ vendor.location.y }}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; background: #EEE;border-bottom: 1px solid #CCC">
+                Reported By
+            </td>
+            <td style="padding: 10px;border-bottom: 1px solid #CCC">
+                {{ eater.name }}
+                <br/>
+                {{ eater.email }}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; background: #EEE;border-bottom: 1px solid #CCC">
+                Time
+            </td>
+            <td style="padding: 10px;border-bottom: 1px solid #CCC">
+                {{ time }}
+            </td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; background: #EEE;">
+                Date
+            </td>
+            <td style="padding: 10px;">
+                {{ date }}
+            </td>
+        </tr>
+    </table>
+
+    {% include "templated_email/text_footer.html" %}
+    {% include "templated_email/footer.html" %}
+{% endblock %}

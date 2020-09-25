@@ -1,0 +1,37 @@
+{% extends "explorer/base.html" %}
+{% block sql_explorer_content %}
+<h1>Send Notification</h1>
+<p>This view lets you send a notification based on the following selected query:</p>
+<pre>{{ query.sql }}</pre>
+<div class="alert alert-danger">
+    <p>
+        The system assumes the query selected will return a list of users, with the "id" column
+        containing user IDs.
+    </p>
+    <p>
+        Otherwise the query will <strong>not</strong> go out to the correct users.
+    </p>
+    <p>
+        A preview of the first 20 users is given as a guide to ensure this is working correctly.
+    </p>
+</div>
+<div class="row">
+    <div class="col-sm-6">
+        <form method="post" class="notification-form">
+            {% csrf_token %}
+            {% load crispy_forms_tags %}
+            {{ form | crispy }}
+            <button type="submit" class="btn btn-primary">Send Notifications</button>
+        </form>
+    </div>
+    <div class="col-sm-6">
+        <h2>User Preview</h2>
+        <ul>
+            {% for user in users %}
+            <li>{{ user }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% include "admin/notification_scripts.html" %}
+{% endblock %}

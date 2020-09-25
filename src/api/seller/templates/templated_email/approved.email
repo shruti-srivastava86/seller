@@ -1,0 +1,29 @@
+{% load i18n %}
+{% block subject %}{% trans "seller account approved!" %}{% endblock %}
+{% block text_body %}
+{% trans "seller account approved!" %}
+
+{{ text | safe }}
+
+{{ link }}
+
+{% include "templated_email/footer_text.html" %}
+{% endblock %}
+{% block html_body %}
+    {% with visual_header="Your Hawkker account was approved" %}
+        {% include "templated_email/header.html" %}
+    {% endwith %}
+    {% include "templated_email/text_header.html" %}
+    <h1>{% trans "seller account approved!" %}</h1>
+    <p>
+        {% blocktrans with vendor_name=vendor.name business_name=vendor.business.name %}
+            Congratulations {{ vendor_name }} your seller account for {{ business_name }} has been approved
+        {% endblocktrans %}
+    </p>
+    <p>{{ text | linebreaks }}</p>
+    {% include "templated_email/text_footer.html" %}
+    {% with text=_("My Account") link=link %}
+        {% include "templated_email/button.html" %}
+    {% endwith %}
+    {% include "templated_email/footer.html" %}
+{% endblock %}

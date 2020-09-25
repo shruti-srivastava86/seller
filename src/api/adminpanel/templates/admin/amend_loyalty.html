@@ -1,0 +1,26 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+{% load crispy_forms_tags %}
+<form method="post" class="form-horizontal notification-form" enctype="multipart/form-data">{% csrf_token %}
+<div class="well">
+    <h1>Amend Loyalty Points</h1>
+
+
+    <div class="control-group">
+        <label class="control-label">
+                Current Balance
+        </label>
+        <div class="controls">
+            {{ user.coins }} points
+        </div>
+    </div>
+
+    {{ form | crispy }}
+    <br/><br/>
+    <button type="submit" class="btn btn-primary">
+        Amend Loyalty Points
+    </button>
+</div>
+</form>
+{{ form.media }}
+{% endblock %}

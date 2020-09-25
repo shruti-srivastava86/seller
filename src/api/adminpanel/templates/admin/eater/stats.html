@@ -1,0 +1,46 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'adminpanel/css/stats.css' %}" />
+{% if original.pk %}
+<div class="well stat-box">
+    <h2 class="text-center">{{ original.name }}</h2>
+    <div class="stat-grid">
+        <div class="stat">
+            <div class="number">{{ original.purchases.count }}</div>
+            <div class="title">
+                # of Transactions
+                <br/>
+                <a class="btn btn-info"
+                   href="{% url 'admin:purchase_purchase_changelist' %}?eater__exact={{ original.pk }}">
+                    View Transactions
+                </a>
+            </div>
+        </div>
+        <div class="stat">
+            <div class="number">{{ original.reviews.count }}</div>
+            <div class="title">
+                # of Reviews
+                <br/>
+                <a class="btn btn-info"
+                   href="{% url 'admin:review_rating_changelist' %}?purchase__eater={{ original.pk }}">
+                    View Ratings
+                </a>
+            </div>
+        </div>
+        <div class="stat">
+            <div class="number">{{ original.coins }}</div>
+            <div class="title">
+                Reward Coins
+                <br/>
+                <a class="btn btn-info"
+                   href="{% url 'admin:user_transaction_changelist' %}?user={{ original.pk }}">
+                    Wallet History
+                </a>
+                <a class="btn btn-info"
+                   href="{% url 'admin:amend_loyalty_points' original.pk %}">
+                    Amend
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
